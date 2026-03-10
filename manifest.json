@@ -1,0 +1,18 @@
+{
+  "name": "Pokédex — JcDevProject24",
+  "short_name": "Pokédex",
+  "description": "Explora el mundo Pokémon: busca, filtra y consulta estadísticas de todos los Pokémon.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#f0f0f0",
+  "theme_color": "#cc0000",
+  "lang": "es",
+  "icons": [
+    {
+      "src": "assets/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ]
+}

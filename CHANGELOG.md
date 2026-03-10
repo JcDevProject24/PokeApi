@@ -7,6 +7,16 @@ y este proyecto usa [versionado semántico](https://semver.org/lang/es/).
 
 ---
 
+## [1.2.0] - 2026-03-10
+
+### Añadido
+- Favicon SVG de pokébola (`assets/favicon.svg`)
+- `manifest.json` para soporte PWA (instalable desde móvil/escritorio)
+- Meta tags SEO: `description`, `author`, `theme-color`
+- Meta tags Open Graph para previsualización en redes sociales
+
+---
+
 ## [1.1.0] - 2026-03-10
 
 ### Añadido
