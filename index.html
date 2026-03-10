@@ -1,0 +1,68 @@
+<!--
+Autores: Jorge Carrillo, Evelyn Hurtado, Yasira Ruesta
+Fecha 21/02/2026
+Descripción: Página principal de búsqueda de pokemons
+-->
+<!doctype html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokédex</title>
+  <link rel="stylesheet" href="assets/styles.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+  <!-- Cabecera principal -->
+  <header>
+    <h1>Pokédex</h1>
+
+    <!-- Contenedor de filtros -->
+    <div class="filtros">
+      <!-- Buscador de Pokémon -->
+      <div class="busqueda">
+        <input type="text" id="busqueda" placeholder="Buscar pokémon..." autocomplete="off" />
+        <ul id="sugerencias" class="oculto"></ul>
+      </div>
+      <!-- Filtro principal -->
+      <select id="filtro">
+        <option value="todo">Todos los pokemones</option>
+        <option value="type">Tipo</option>
+        <option value="pokedex">Pokédex</option>
+        <option value="generation">Generación</option>
+      </select>
+
+      <!-- Selector secundario según filtro -->
+      <select id="select">
+        <option value="">Selecciona una opción</option>
+      </select>
+      <button id="resetFiltros">⟳</button>
+    </div>
+  </header>
+
+  <main>
+    <!-- Mensajes al usuario -->
+    <div id="mensajes"></div>
+
+    <!-- Resultados de Pokémon -->
+    <div id="resultados"></div>
+  </main>
+
+  <!-- Modal de detalle de Pokémon -->
+  <div id="modal" class="modal oculto">
+    <div class="modal-contenido">
+      <button id="cerrarModal">✕</button>
+      <div id="modalDatos"></div>
+    </div>
+  </div>
+
+  <script src="assets/app.js"></script>
+</body>
+
+</html>

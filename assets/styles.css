@@ -1,0 +1,393 @@
+/* BASE */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f0f0;
+  color: #222;
+}
+
+/* HEADER */
+header {
+  background: linear-gradient(135deg, #c00808, #e20404);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.3);
+  color: white;
+  padding: 16px 24px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  text-align: center;
+}
+
+header h1 {
+  font-size: 2.5rem;
+  margin-bottom: 10px;
+}
+
+/* FILTROS */
+.filtros {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.filtros input,
+.filtros select {
+  padding: 10px 14px;
+  font-size: 14px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  margin-right: 5px;
+  outline: none;
+}
+
+.filtros select {
+  cursor: pointer;
+}
+
+.filtros input {
+  width: 250px;
+}
+
+/*  BUSQUEDA   */
+.busqueda {
+  position: relative;
+}
+
+#sugerencias {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  z-index: 20;
+}
+
+#sugerencias li {
+  padding: 8px 12px;
+  cursor: pointer;
+  text-transform: capitalize;
+  font-size: 0.9rem;
+  color: #222;
+}
+
+#sugerencias li:hover {
+  background: #e0e0e0;
+}
+
+/* MAIN */
+main {
+  max-width: 1100px;
+  margin: 24px auto;
+  padding: 0 20px;
+}
+
+.mensaje {
+  padding: 10px;
+  margin-bottom: 12px;
+  border-radius: 4px;
+}
+
+.mensaje.error {
+  background: #ffebee;
+  color: #c62828;
+  border: 1px solid #ef9a9a;
+}
+
+.mensaje.info {
+  background: #e3f2fd;
+  color: #1565c0;
+  border: 1px solid #90caf9;
+}
+
+/* GRID DE TARJETAS  */
+#resultados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  padding: 16px 12px;
+  text-align: center;
+  cursor: pointer;
+  transition:
+    transform 0.15s,
+    box-shadow 0.15s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.card img {
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+}
+
+.card .numero {
+  display: block;
+  font-size: 0.75rem;
+  color: #999;
+  margin-top: 4px;
+}
+
+.card h3 {
+  font-size: 0.95rem;
+  text-transform: capitalize;
+  margin: 4px 0;
+}
+
+/* TIPOS */
+.tipos {
+  display: flex;
+  gap: 4px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 6px 0;
+}
+
+.tipo {
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-size: 0.72rem;
+  font-weight: bold;
+  text-transform: capitalize;
+  color: white;
+}
+
+/* Colores de tipos */
+.tipo-fire {
+  background: #f08030;
+}
+.tipo-water {
+  background: #6890f0;
+}
+.tipo-grass {
+  background: #78c850;
+}
+.tipo-electric {
+  background: #f8d030;
+  color: #333;
+}
+.tipo-psychic {
+  background: #f85888;
+}
+.tipo-ice {
+  background: #98d8d8;
+  color: #333;
+}
+.tipo-dragon {
+  background: #7038f8;
+}
+.tipo-dark {
+  background: #705848;
+}
+.tipo-fairy {
+  background: #ee99ac;
+  color: #333;
+}
+.tipo-normal {
+  background: #a8a878;
+}
+.tipo-fighting {
+  background: #c03028;
+}
+.tipo-flying {
+  background: #a890f0;
+}
+.tipo-poison {
+  background: #a040a0;
+}
+.tipo-ground {
+  background: #e0c068;
+  color: #333;
+}
+.tipo-rock {
+  background: #b8a038;
+}
+.tipo-bug {
+  background: #a8b820;
+}
+.tipo-ghost {
+  background: #705898;
+}
+.tipo-steel {
+  background: #b8b8d0;
+  color: #333;
+}
+
+/* MODAL*/
+
+.modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  padding: 0;
+}
+
+.modal-contenido {
+  background: white;
+  border-radius: 12px;
+  padding: 28px;
+  max-width: 480px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+}
+
+#cerrarModal {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: #555;
+}
+
+.modal-contenido img {
+  display: block;
+  width: 140px;
+  height: 140px;
+  object-fit: contain;
+  margin: 0 auto 8px;
+}
+
+.modal-contenido h2 {
+  text-align: center;
+  font-size: 1.4rem;
+  text-transform: capitalize;
+}
+
+.modal-contenido h2 small {
+  font-size: 0.85rem;
+  color: #999;
+  font-weight: normal;
+}
+
+.modal-contenido h4 {
+  margin: 16px 0 8px;
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  color: #555;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 4px;
+}
+
+.modal-info {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  font-size: 0.9rem;
+  color: #555;
+  margin: 10px 0;
+}
+
+#mapa {
+  height: 250px;
+  border-radius: 8px;
+  margin-top: 10px;
+}
+
+/* HABILIDADES */
+
+.habilidades {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.habilidad {
+  padding: 4px 12px;
+  background: #f0f0f0;
+  border-radius: 12px;
+  font-size: 0.82rem;
+  text-transform: capitalize;
+  border: 1px solid #ddd;
+}
+
+.habilidad.oculta {
+  background: #fff3e0;
+  border-color: #ffcc80;
+  color: #e65100;
+}
+
+.nota {
+  display: block;
+  margin-top: 4px;
+  font-size: 0.75rem;
+  color: #999;
+}
+
+/* ESTADÍSTICAS */
+
+.stats {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.stat-fila {
+  display: grid;
+  grid-template-columns: 80px 36px 1fr;
+  align-items: center;
+  gap: 10px;
+}
+
+.stat-nombre {
+  font-size: 0.78rem;
+  color: #777;
+  text-align: right;
+}
+
+.stat-valor {
+  font-weight: bold;
+  font-size: 0.88rem;
+  text-align: center;
+}
+
+.stat-barra-bg {
+  background: #eee;
+  border-radius: 4px;
+  height: 8px;
+  overflow: hidden;
+}
+
+.stat-barra {
+  height: 100%;
+  background: #cc0000;
+  border-radius: 4px;
+}
+
+#resetFiltros {
+  padding: 10px 14px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: white;
+  background: rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  border-radius: 8px;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+  line-height: 1;
+}
