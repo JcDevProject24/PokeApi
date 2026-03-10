@@ -81,6 +81,11 @@ Descripción: Página principal de búsqueda de pokemons
   </div>
 
   <script src="assets/app.js"></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("/DAS/Unidad_6/pokeapi/sw.js");
+    }
+  </script>
 </body>
 
 </html>
