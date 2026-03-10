@@ -1,5 +1,5 @@
 const CACHE = "pokedex-v1";
-const PRECACHE = ["/", "/index.html", "/assets/styles.css", "/assets/app.js", "/assets/favicon.svg", "/manifest.json"];
+const PRECACHE = ["./", "./index.html", "./assets/styles.css", "./assets/app.js", "./assets/favicon.svg", "./manifest.json"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(PRECACHE)));
